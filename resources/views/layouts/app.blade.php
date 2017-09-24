@@ -65,6 +65,15 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li>
+                                <a href="{{ route('cars.index') }}">Cars</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('rents.index') }}">Rents</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('categories.index') }}">Categories</a>
+                            </li>
                         @endif
                     </ul>
                 </div>

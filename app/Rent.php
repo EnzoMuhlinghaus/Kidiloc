@@ -12,10 +12,11 @@ class Rent extends Model
     'rent_date_beginning',
     'rent_date_ending',
     'customer_email',
+    'car_id',
 
   ];
 
-  public function cars(){
+  public function car(){
     return $this->belongsTo(Car::class);
   }
 }

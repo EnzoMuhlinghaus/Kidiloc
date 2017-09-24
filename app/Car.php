@@ -12,14 +12,15 @@ class Car extends Model
   protected $fillable = [
     'brand',
     'daily_rate',
-    'model'
+    'model',
+    'category_id',
   ];
 
   public function rents(){
     return $this->hasMany(Rent::class)->withTimestamps();
   }
 
-  public function categories(){
+  public function category(){
     return $this->belongsTo(Category::class);
   }
 }
