@@ -16,6 +16,7 @@ class CreateCarsTable extends Migration
         Schema::create('cars', function (Blueprint $table) {
           $table->increments('id');
           $table->string('brand');
+          $table->string('model');
           $table->decimal('daily_rate',7,2);
           $table->integer('category_id')->unsigned();
           $table->foreign('category_id')->references('id')->on('categories');

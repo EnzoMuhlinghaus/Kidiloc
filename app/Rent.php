@@ -6,7 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rent extends Model
 {
-    public function cars(){
-      return $this->belongsToMany('Kidiloc\Rent')->withTimestamps();
-    }
+  protected $table = 'rents';
+
+  protected $fillable = [
+    'rent_date_beginning',
+    'rent_date_ending',
+    'customer_email',
+
+  ];
+
+  public function cars(){
+    return $this->belongsTo(Car::class);
+  }
 }
