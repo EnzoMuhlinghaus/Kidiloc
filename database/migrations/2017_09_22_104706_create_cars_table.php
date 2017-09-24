@@ -14,11 +14,13 @@ class CreateCarsTable extends Migration
     public function up()
     {
         Schema::create('cars', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('brand');
-            $table->string('category');
-            $table->integer('daily_rate');
-            $table->timestamps();
+          $table->increments('id');
+          $table->string('brand');
+          $table->decimal('daily_rate',7,2);
+          $table->integer('category_id')->unsigned();
+          $table->foreign('category_id')->references('id')->on('categories');
+
+          $table->timestamps();
         });
     }
 

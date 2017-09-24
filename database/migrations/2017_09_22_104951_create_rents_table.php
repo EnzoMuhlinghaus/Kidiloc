@@ -14,9 +14,13 @@ class CreateRentsTable extends Migration
     public function up()
     {
         Schema::create('rents', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('customer_mail');
-            $table->timestamps();
+          $table->increments('id');
+          $table->date('rent_date_beginning');
+          $table->date('rent_date_ending');
+          $table->string('customer_email');
+          $table->integer('car_id')->unsigned();
+          $table->foreign('car_id')->references('id')->on('cars');
+          $table->timestamps();
         });
     }
 
